@@ -1,0 +1,66 @@
+@use '../utils/' as *;
+@use './root' as *;
+
+.site-mobile-navbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  @include min(lg) {
+    display: none;
+  }
+  .site-mobile-navbar-inner {
+    position: relative;
+    color: color(black);
+    background-color: color(white);
+    border-top: 1px solid color(gray-200);
+    border-left: 1px solid color(gray-200);
+    border-right: 1px solid color(gray-200);
+    border-radius: theme(radius-base);
+    box-shadow: 0 -4px 8px 0px rgba(0, 0, 0, 0.04);
+    padding: rem(12) rem(14);
+    overflow: hidden;
+    transition: all .6s cubic-bezier(.7,0,.2,1);
+    .site-navigation {
+      .menu {
+        justify-content: space-between;
+        gap: rem(6);
+        li {
+          justify-content: center;
+          a {
+            position: relative;
+            display: inline-flex;
+            flex-direction: column;
+            justify-content: center;
+            flex-wrap: wrap;
+            align-items: center;
+            min-width: rem(46);
+            padding-left: rem(6);
+            padding-right: rem(6);
+            max-height: rem(50);
+            color: currentColor;
+            svg {
+              width: rem(24);
+              height: rem(24);
+            }
+            span {
+              position: relative;
+              display: block;
+              font-size: rem(9);
+              font-weight: 400;
+              letter-spacing: 0;
+              line-height: 1;
+              text-transform: uppercase;
+              text-align: center;
+              color: color(gray-500);
+              width: 100%;
+              transition: color .1s $ease;
+              z-index: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,61 @@
+@use '../utils/' as *;
+@use './root' as *;
+
+.site-footer-widgets {
+  font-size: theme(footer-text-size);
+  .site-footer-inner {
+    padding-top: rem(36);
+    padding-bottom: rem(36);
+    @include min(lg) {
+      padding-top: rem(66);
+      padding-bottom: rem(66);
+    }
+  }
+  .footer-brand-column {
+    .site-brand {
+      margin-bottom: rem(24);
+    }
+    .footer-brand-content {
+      font-size: rem(14);
+      margin-bottom: rem(24);
+      @include min(lg) {
+        font-size: rem(15);
+        margin-bottom: rem(36);
+      }
+      p {
+        margin-bottom: 0;
+      }
+    }
+    .site-social-media {
+      gap: rem(8);
+      li {
+        a {
+          color: color(footer-link);
+          background-color: color(footer-border);
+          &:hover {
+            background-color: color(footer-link);
+            color: color(footer-background);
+          }
+          @include min(lg) {
+            width: rem(42);
+            height: rem(42);
+          }
+        }
+      }
+    }
+  }
+  .footer-widgets {
+    .widget {
+      nav {
+        ul {
+          li {
+            a {
+              font-size: theme(footer-text-size);
+              color: color(footer-link);
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+@use '../../utils/' as *;
+@use '../root' as *;
+
+.site-announcement-bar {
+  font-size: theme('announcement-font-size');
+  font-weight: theme('announcement-font-weight');
+  background-color: color(announcement-background);
+  color: color(announcement-foreground);
+  .announcement-bar-inner {
+    height: theme('announcement-height');
+  }
+}

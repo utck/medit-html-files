@@ -1,0 +1,31 @@
+<header id="masthead" class="site-header {{header-style}} {{header-type}}">
+  <div class="header-row">
+    <div class="container">
+      <div class="header-inner d-flex align-items-center justify-content-between">
+        <div class="column start brand-column">
+          {{> action-toggle}}
+          {{> brand}}
+          {{# ifequal header-style 'style-1'}}
+            {{> primary-menu}}
+          {{/ ifequal}}
+        </div><!-- column -->
+        {{# ifequal header-style 'style-2'}}
+          <div class="column center menu-column">
+            {{> primary-menu}}
+          </div>
+        {{/ ifequal}}
+        <div class="column end actions-column">
+          {{# ifequal header-style 'style-3'}}
+            {{> primary-menu}}
+          {{/ ifequal}}
+    
+          <div class="site-actions">
+            {{> action-search}}
+            {{> action-cart}}
+          </div><!-- site-actions -->
+          <a href="#" class="btn btn-primary header-button desktop-only">Book Now</a>
+        </div><!-- column -->
+      </div><!-- header-inner -->
+    </div><!-- container -->
+  </div><!-- header-row -->
+</header>

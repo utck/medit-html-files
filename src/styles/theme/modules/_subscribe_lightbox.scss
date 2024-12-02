@@ -1,0 +1,103 @@
+@use '../../utils/' as *;
+@use '../root' as *;
+
+.site-subscribe-lightbox {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  padding-left: rem(16);
+  padding-right: rem(16);
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1000;
+  .site-subscribe-lightbox-inner {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: rem(820);
+    background-color: color(white);
+    border-radius: theme(radius-base);
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(.9);
+    transition: .4s theme(primary-transition);
+    z-index: 1;
+    & > * {
+      flex: 0 0 auto;
+      width: 100%;
+      @include min(md) {
+        width: 50%;
+      }
+      &.media-column {
+        position: relative;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      &.content-column {
+        padding: rem(20);
+        text-align: center;
+        @include min(md) {
+          padding: rem(46) rem(36);
+        }
+      }
+    }
+    .lightbox-description {
+      font-size: theme(text-sm);
+      margin-bottom: rem(20);
+      color: color(gray-500);
+      @include min(md) {
+        margin-bottom: rem(30);
+      }
+    }
+    .mc4wp-form {
+      margin-bottom: rem(20);
+      @include min(md) {
+        margin-bottom: rem(30);
+      }
+      .mc4wp-form-fields {
+        .btn {
+          width: 100%;
+          margin-top: rem(8);
+        }
+        input, button {
+          @include min(md) {
+            height: rem(52);
+          }
+        }
+      }
+    }
+    .site-close {
+      position: absolute;
+      top: rem(10);
+      right: rem(10);
+      width: auto;
+      z-index: 2;
+    }
+  }
+  .site-subscribe-lightbox-overlay {
+    transition: .3s theme(primary-transition);
+    transition-property: opacity, visibility, background-color;
+  }
+  &.active {
+    pointer-events: auto;
+    .site-subscribe-lightbox-overlay, .site-subscribe-lightbox-inner {
+      opacity: 1;
+      visibility: visible;
+    }
+    .site-subscribe-lightbox-inner {
+      pointer-events: auto;
+      transform: scale(1);
+    }
+  }
+}

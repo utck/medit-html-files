@@ -1,0 +1,14 @@
+// WooCommerce product
+@forward 'woo_product';
+
+// WooCommerce cart
+@forward 'woo_cart';
+
+// WooCommerce default
+@forward 'woo_global';
+
+// WooCommerce single
+@forward 'woo_single';
+
+// WooCommerce account
+@forward 'woo_account';

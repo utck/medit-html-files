@@ -1,0 +1,122 @@
+@use '../utils/' as *;
+@use './root' as *;
+
+/* --- Bootstrap clearfix --- */
+:root,[data-bs-theme=light] {
+  --bs-breakpoint-lg: 1024px;
+  --bs-body-color: #{color(body-text)};
+  --bs-body-bg: #{color(body-background)};
+}
+
+/* --- Default border clearfix --- */
+*, :after, :before {
+  border: 0 solid #e5e7eb;
+}
+
+/* --- Body clearfix --- */
+body {
+  font-family: theme(body-font);
+  font-size: theme(body-font-size);
+  font-weight: theme(body-font-weight);
+  line-height: theme(body-line-height);
+  letter-spacing: theme(body-letter-spacing);
+  text-align: theme(body-text-align);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overscroll-behavior-y: contain;
+}
+
+/* --- Image clearfix --- */
+img {
+  max-width: 100%;
+  height: auto;
+  image-rendering: -webkit-optimize-contrast;
+}
+
+/* --- Heading clearfix --- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: theme(heading-font);
+  font-weight: theme(heading-font-weight);
+  letter-spacing: theme(heading-letter-spacing);
+  line-height: theme(heading-line-height);
+}
+
+/* --- Page content clearfix --- */
+.page-content {
+  position: relative;
+  overflow: hidden;
+  &:has(.sticky-sidebar) {
+    @include min(lg) {
+      overflow: visible;
+    }
+  }
+}
+
+/* --- Main content clearfix --- */
+.main-content {
+  position: relative;
+  min-height: 100vh;
+  background-color: color(body-background);
+  &:not(.footer-merged) {
+    padding-bottom: rem(40);
+    @include min(lg) {
+      padding-bottom: rem(60);
+    }
+  }
+}
+
+/* --- Container clearfix --- */
+.container {
+  --bs-gutter-x: #{theme(gutter)};
+  max-width: theme(width);
+  margin: 0 auto;
+  @include min(lg) {
+    padding-left: theme(screen-padding);
+    padding-right: theme(screen-padding);
+  }
+}
+
+/* --- Row clearfix --- */
+.row {
+  @include min(lg) {
+    --bs-gutter-x: #{theme(gutter)};
+  }
+  &.gap-y-10 {
+    row-gap: rem(10);
+  }
+  &.gap-y-20 {
+    row-gap: rem(20);
+  }
+  &.gap-y-30 {
+    row-gap: rem(30);
+  }
+  &.content-wrapper {
+    &:not(.full-width) {
+      &:not(.flex-row-reverse) {
+        .primary-column {
+          @include min(lg) {
+            padding-right: rem(56);
+          }
+        }
+        .secondary-column {
+          @include min(lg) {
+            padding-left: rem(56);
+          }
+        }
+      }
+      &.flex-row-reverse {
+        .primary-column {
+          @include min(lg) {
+            padding-left: rem(56);
+          }
+        }
+        .secondary-column {
+          @include min(lg) {
+            padding-right: rem(56);
+          }
+        }
+      }
+    }
+  }
+}

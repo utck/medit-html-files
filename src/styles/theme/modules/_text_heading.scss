@@ -1,0 +1,42 @@
+@use '../../utils/' as *;
+@use '../root' as *;
+
+.section-text-heading {
+  .text-heading-inner {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: rem(4);
+    .column {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      flex: 1 1 0;
+    }
+  }
+  &.style-1 {
+    .column {
+      flex: 0 0 auto;
+      width: 100%;
+      @include min(lg) {
+        width: 50%;
+      }
+      &.heading-column {
+        @include min(lg) {
+          padding-right: rem(60);
+        }
+      }
+    }
+  }
+  &.style-2 {
+    text-align: center;
+    .column {
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 auto;
+      width: 100%;
+      max-width: rem(820);
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}

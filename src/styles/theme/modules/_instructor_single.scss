@@ -1,0 +1,204 @@
+@use '../../utils/' as *;
+@use '../root' as *;
+
+.site-instructor-single {
+  .instructor-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: rem(10);
+    margin-bottom: rem(20);
+    .column {
+      flex-wrap: wrap;
+      flex: 0 0 auto;
+      &.name-column {
+        align-items: flex-start;
+        flex: 1 0 0%;
+      }
+      .entry-title {
+        font-size: rem(26);
+        font-weight: 600;
+        width: 100%;
+        margin-bottom: rem(2);
+        @include min(md) {
+          font-size: rem(42);
+        }
+      }
+      .instructor-role {
+        font-size: rem(14);
+        color: color(gray-500);
+        width: 100%;
+        @include min(lg) {
+          font-size: rem(16);
+        }
+      }
+    }
+  }
+  .instructor-meta {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-bottom: rem(20);
+    .meta-item {
+      font-size: rem(13);
+      padding-top: rem(10);
+      padding-bottom: rem(10);
+      color: color(gray-400);
+      & + .meta-item {
+        border-top: 1px solid color(gray-200);
+      }
+      strong {
+        color: color(black);
+      }
+    }
+    @include min(md) {
+      justify-content: space-between;
+      flex-direction: row;
+      border-top: 1px solid color(gray-200);
+      padding-top: rem(20);
+      margin-bottom: rem(40);
+      .meta-item {
+        font-size: rem(15);
+        padding-top: 0;
+        padding-bottom: 0;
+        & + .meta-item {
+          border-top: 0;
+        }
+      }
+    }
+  }
+  .instructor-bio {
+    font-size: rem(14);
+    color: color(gray-600);
+    @include min(md) {
+      font-size: rem(18);
+      line-height: 1.8;
+      p {
+        margin-bottom: rem(24);
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+  .instructor-section {
+    & > .entry-title {
+      font-size: rem(22);
+      margin-bottom: rem(20);
+      @include min(md) {
+        font-size: rem(26);
+      }
+    }
+    &.instructor-courses {
+      margin-top: rem(40);
+      & > .entry-title {
+        margin-bottom: rem(30);
+        @include min(md) {
+          margin-bottom: rem(42);
+        }
+      }
+    }
+  }
+  .instructor-workshops {
+    margin-top: rem(20);
+    @include min(md) {
+      margin-top: rem(40);
+      .instructor-workshops-inner {
+        border: 1px solid color(gray-200);
+        padding: 0 rem(20);
+        border-radius: theme(radius-base);
+      }
+    }
+    .workshop-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      li {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        font-size: rem(14);
+        @include min(md) {
+          flex-direction: row;
+          gap: rem(20);
+          font-size: rem(15);
+          padding-top: rem(36);
+          padding-bottom: rem(36);
+        }
+        & + li {
+          margin-top: rem(30);
+          @include min(md) {
+            margin-top: 0;
+            border-top: 1px solid color(gray-200);
+          }
+        }
+        p {
+          margin-bottom: 0;
+        }
+        & > * {
+          @include min(md) {
+            flex: 0 0 auto;
+          }
+          & + * {
+            padding-top: rem(20);
+            padding-bottom: rem(20);
+            border-top: 1px solid color(gray-200);
+            @include min(md) {
+              padding-top: 0;
+              padding-bottom: 0;
+              border-top: 0;
+            }
+          }
+        }
+        .workshop-number {
+          font-weight: 600;
+          @include min(md) {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: rem(15);
+            width: rem(40);
+            height: rem(40);
+            border-radius: 50%;
+            background-color: color(gray-100);
+          }
+        }
+        .workshop-title {
+          @include min(md) {
+            max-width: rem(660);
+            padding-right: rem(60);
+          }
+          a {
+            font-size: rem(16);
+            font-weight: 600;
+            color: color(black);
+            text-decoration: none;
+            @include min(md) {
+              font-size: rem(18);
+            }
+          }
+          .workshop-excerpt {
+            font-size: rem(13);
+            color: color(gray-500);
+          }
+        }
+        .with-icon {
+          display: flex;
+          align-items: center;
+          font-weight: 500;
+          line-height: 1.5;
+          gap: rem(10);
+          @include min(md) {
+            flex: 1 0 0%;
+            align-items: flex-start;
+            padding-left: rem(20);
+          }
+          svg {
+            width: rem(20);
+            height: rem(20);
+          }
+        }
+      }
+    }
+  }
+}

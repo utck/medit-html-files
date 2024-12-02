@@ -1,0 +1,47 @@
+@use '../../utils/' as *;
+@use '../root' as *;
+
+.badge {
+  --bs-badge-padding-x: #{rem(12)};
+  --bs-badge-padding-y: #{rem(8)};
+  --bs-badge-border-radius: #{theme(radius-sm)};
+  display: inline-flex;
+  align-items: center;
+  gap: rem(10);
+  color: color(gray-900);
+  background-color: color(gray-100);
+  &.badge-rounded {
+    --bs-badge-padding-x: #{rem(14)};
+    --bs-badge-border-radius: #{rem(9999)};
+  }
+  &.badge-text {
+    --bs-badge-padding-x: #{rem(10)};
+    --bs-badge-padding-y: #{rem(8)};
+    position: relative;
+    color: currentColor;
+    background-color: transparent;
+    outline: 1px solid currentColor;
+    @include min(lg) {
+      --bs-badge-padding-x: #{rem(14)};
+      --bs-badge-padding-y: #{rem(10)};
+    }
+    &.badge-text-white {
+      outline-color: rgba(255, 255, 255, 0.4);
+    }
+    &.badge-rounded {
+      --bs-badge-padding-x: #{rem(16)};
+      &::before {
+        content: '';
+        display: block;
+        width: rem(6);
+        height: rem(6);
+        border-radius: rem(9999);
+        background-color: currentColor;
+        @include min(lg) {
+          width: rem(8);
+          height: rem(8);
+        }
+      }
+    }
+  }
+}

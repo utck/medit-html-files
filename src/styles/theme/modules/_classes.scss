@@ -1,0 +1,177 @@
+@use '../../utils/' as *;
+@use '../root' as *;
+
+.site-class-item {
+  position: relative;
+  .entry-meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: rem(12);
+    gap: rem(10);
+    a {
+      font-weight: 600;
+      color: color(black);
+      text-decoration: none;
+    }
+    .class-instructor {
+      color: color(gray-500);
+    }
+  }
+  &.inner-style {
+    overflow: hidden;
+    border-radius: theme(radius-sm);
+    @include min(lg) {
+      border-radius: theme(radius-base);
+    }
+    .site-class-inner {
+      display: grid;
+      & > * {
+        grid-column: 1;
+        grid-row: 1;
+      }
+      .entry-class-thumbnail {
+        img {
+          transition: all .5s $ease-in-out;
+        }
+      }
+      .entry-class-content{
+        position: relative;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: rem(20);
+        z-index: 1;
+        .entry-class-time {
+          font-size: rem(12);
+          font-weight: 600;
+          line-height: 1;
+          padding: rem(10) rem(12);
+          background-color: color(white);
+          border-radius: theme(radius-sm);
+        }
+        .entry-class-body {
+          display: flex;
+          align-items: center;
+          width: 100%;
+          background-color: color(white);
+          border-radius: theme(radius-sm);
+          padding: rem(16);
+          @include min(lg) {
+            padding: rem(20);
+          }
+          .entry-class-body-inner {
+            flex: 1 0 0%;
+          }
+          .entry-title {
+            font-size: rem(15);
+            font-weight: 600;
+            margin-bottom: rem(4);
+            @include min(lg) {
+              font-size: rem(16);
+              margin-bottom: rem(6);
+            }
+            a {
+              color: currentColor;
+              text-decoration: none;
+            }
+          }
+          .class-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: rem(36);
+            height: rem(36);
+            border-radius: 50%;
+            color: color(black);
+            border: 1px solid color(gray-200);
+            text-decoration: none;
+            transition: all .3s $ease-in-out;
+            @include min(lg) {
+              width: rem(42);
+              height: rem(42);
+            }
+            svg {
+              width: rem(18);
+              height: auto;
+              transition: all .3s $ease-in-out;
+              @include min(lg) {
+                width: rem(20);
+              }
+            }
+          }
+        }
+      }
+    }
+    &:hover {
+      .entry-class-thumbnail {
+        img {
+          transform: scale(1.05);
+        }
+      }
+      .entry-class-content {
+        .class-btn {
+          background-color: color(gray-100);
+          svg {
+            transform: rotate(45deg);
+          }
+        }
+      }
+    }
+  }
+  &.text-style {
+    padding: rem(20);
+    color: color(black);
+    border: 1px solid color(gray-200);
+    border-radius: theme(radius-sm);
+    background-color: color(white);
+    @include min(lg) {
+      padding: rem(36);
+      border-radius: theme(radius-lg);
+    }
+    .site-class-inner {
+      display: flex;
+      flex-direction: column;
+      gap: rem(12);
+      @include min(md) {
+        gap: rem(36);
+      }
+      @include min(lg) {
+        gap: rem(48);
+      }
+    }
+    .entry-title {
+      font-size: rem(18);
+      font-weight: 600;
+      @include min(lg) {
+        font-size: rem(20);
+      }
+      a {
+        color: currentColor;
+        text-decoration: none;
+      }
+    }
+    .entry-excerpt {
+      font-size: rem(13);
+      color: color(gray-500);
+      @include min(lg) {
+        font-size: rem(15);
+      }
+    }
+    .entry-meta {
+      font-size: rem(13);
+      margin-bottom: rem(20);
+      @include min(lg) {
+        margin-bottom: rem(24);
+      }
+      .entry-class-time {
+        font-weight: 600;
+        line-height: 1;
+        border: 1px solid color(gray-300);
+        border-radius: theme(radius-sm);
+        padding: rem(10) rem(10);
+      }
+    }
+  }
+}

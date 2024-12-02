@@ -1,0 +1,18 @@
+@use '../../utils/' as *;
+@use '../root' as *;
+
+.testimonial-comment {
+  position: relative;
+  .testimonial-comment-inner {
+    text-align: center;
+    max-width: rem(960);
+    width: 100%;
+    margin: 0 auto;
+    .comment {
+      margin-bottom: rem(20);
+      @include min(lg) {
+        margin-bottom: rem(36);
+      }
+    }
+  }
+}

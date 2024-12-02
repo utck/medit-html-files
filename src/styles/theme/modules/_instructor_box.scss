@@ -1,0 +1,192 @@
+@use '../../utils/' as *;
+@use '../root' as *;
+
+.site-instructor-box {
+  position: relative;
+  max-width: rem(460);
+  z-index: 1;
+  .instructor-box-inner {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: rem(16);
+    padding: rem(16) rem(18);
+    border-radius: theme(radius-sm);
+    .instructor-avatar {
+      position: relative;
+      width: rem(36);
+      height: rem(36);
+      overflow: hidden;
+      border-radius: theme(radius-sm);
+    }
+    .instructor-content {
+      display: inline-flex;
+      align-items: center;
+      flex-wrap: wrap;
+      flex: 1 0 0%;
+      .instructor-info {
+        flex: 1 0 0%;
+        & > * {
+          color: currentColor;
+        }
+      }
+      .instructor-name {
+        font-size: theme(text-sm);
+        font-weight: 600;
+        margin-bottom: rem(2);
+      }
+      .instructor-role {
+        font-size: rem(12);
+        margin-bottom: 0;
+      }
+    }
+  }
+  .instructor-box-rating {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: rem(12);
+    padding: rem(12) rem(18);
+    border-bottom-left-radius: theme(radius-sm);
+    border-bottom-right-radius: theme(radius-sm);
+    .rating-stars {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      font-size: rem(12);
+      gap: rem(4);
+      color: currentColor;
+      i {
+        &::before {
+          margin: 0;
+        }
+      }
+    }
+    .rating-text {
+      font-size: theme(text-xs);
+    }
+  }
+  &:has(.instructor-box-rating) {
+    .instructor-box-inner {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+  &.box-white {
+    color: color(black);
+    .instructor-box-inner {
+      background-color: color(white);
+    }
+    .instructor-box-rating {
+      background-color: color(white);
+      border-top: 1px solid color(gray-200);
+    }
+    &.box-transparent {
+      color: color(white);
+      .instructor-box-inner {
+        background-color: rgba(color(white-rgb), 0.15);
+        backdrop-filter: blur(rem(8));
+      }
+      .instructor-box-rating {
+        border-top: 0;
+        background-color: rgba(color(white-rgb), 0.08);
+        backdrop-filter: blur(rem(8));
+      }
+    }
+  }
+  &.box-secondary {
+    color: color(black);
+    .instructor-box-inner {
+      background-color: color(secondary-background);
+    }
+    .instructor-box-rating {
+      background-color: color(white);
+      border-top: 1px solid color(gray-200);
+    }
+    &.box-transparent {
+      color: color(white);
+      .instructor-box-inner {
+        background-color: rgba(color(white-rgb), 0.15);
+        backdrop-filter: blur(rem(8));
+      }
+      .instructor-box-rating {
+        border-top: 0;
+        background-color: rgba(color(white-rgb), 0.08);
+        backdrop-filter: blur(rem(8));
+      }
+    }
+  }
+  &.for-hero-large {
+    @include min(lg) {
+      display: none;
+    }
+    @include min('3xl') {
+      display: block;
+    }
+  }
+}
+
+// Instructor carousel
+.site-instructor {
+  position: relative;
+  .instructor-thumbnail {
+    position: relative;
+    overflow: hidden;
+    border-radius: theme(radius-sm);
+    margin-bottom: rem(12);
+    @include min(lg) {
+      border-radius: theme(radius-base);
+      margin-bottom: rem(18);
+    }
+    .instructor-social {
+      position: absolute;
+      top: rem(12);
+      right: rem(12);
+      ul {
+        li {
+          transition: all .4s theme(secondary-transition);
+          @include min(lg) {
+            opacity: 0;
+            transform: translateX(rem(8));
+            &:nth-child(1) {transition-delay: .1s;}
+            &:nth-child(2) {transition-delay: .2s;}
+            &:nth-child(3) {transition-delay: .3s;}
+            &:nth-child(4) {transition-delay: .4s;}
+            &:nth-child(5) {transition-delay: .5s;}
+          }
+        }
+      }
+    }
+  }
+  .instructor-content {
+    .instructor-name {
+      font-size: theme(text-base);
+      font-weight: 600;
+      margin-bottom: rem(2);
+      @include min(lg) {
+        font-size: theme(text-xl);
+      }
+      a {
+        color: currentColor;
+        text-decoration: none;
+      }
+    }
+    .instructor-role {
+      font-size: rem(14);
+      color: color(gray-500);
+      margin-bottom: 0;
+    }
+  }
+  &:hover {
+    .instructor-thumbnail {
+      @include min(lg) {
+        ul {
+          li {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+      }
+    }
+  }
+}

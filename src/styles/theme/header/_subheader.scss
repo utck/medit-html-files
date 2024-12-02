@@ -1,0 +1,41 @@
+@use '../../utils/' as *;
+@use '../root' as *;
+
+.site-subheader {
+  position: relative;
+  background-color: color('subheader-background');
+  color: color('subheader-foreground');
+  z-index: 16;
+  .site-subheader-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: theme('subheader-font-size');
+    font-weight: theme('subheader-font-weight');
+    letter-spacing: theme('subheader-letter-spacing');
+    height: theme('subheader-height');
+    gap: theme('subheader-gap');
+    .site-navigation {
+      .menu {
+        gap: theme('subheader-gap');
+        a {
+          i {
+            font-size: calc(theme('subheader-font-size') + rem(1));
+          }
+        }
+        & > li {
+          & > a {
+            height: theme('subheader-height');
+          }
+          .sub-menu {
+            --theme-sub-menu-padding: #{rem(20)};
+            min-width: auto;
+            a {
+              font-size: inherit;
+            }
+          }
+        }
+      }
+    }
+  }
+}

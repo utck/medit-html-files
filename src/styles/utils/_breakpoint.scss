@@ -1,0 +1,32 @@
+@use 'sass:map';
+@use 'snug' as *;
+
+// Min Breakpoint
+@mixin min($breakpoint) {
+	@if map.has-key($breakpoints , $breakpoint) {
+		$breakpoint-value: map.get(
+			$breakpoints,
+			$breakpoint
+		);
+		@media screen and (min-width: ($breakpoint-value + 0.02px)) {
+			@content;
+		}
+	} @else {
+		@warn "Invalid breakpoint: #{$breakpoint}.";
+	}
+}
+
+// Max Breakpoint
+@mixin max($breakpoint) {
+	@if map.has-key($breakpoints , $breakpoint) {
+		$breakpoint-value: map.get(
+			$breakpoints,
+			$breakpoint
+		);
+		@media screen and (max-width: ($breakpoint-value - 0.02px)) {
+			@content;
+		}
+	} @else {
+		@warn "Invalid breakpoint: #{$breakpoint}.";
+	}
+}

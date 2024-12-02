@@ -1,0 +1,66 @@
+@use '../../utils/' as *;
+@use '../root' as *;
+
+.site-customer-box {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: rem(16);
+  &.rounded-base {
+    padding: rem(20);
+    border-radius: theme(radius-sm);
+  }
+  @include min(lg) {
+    gap: rem(24);
+  }
+  .customer-avatar {
+    position: relative;
+    flex: 0 0 auto;
+    width: rem(52);
+    height: rem(52);
+    border-radius: theme(radius-sm);
+    overflow: hidden;
+  }
+  .customer-content {
+    .rating-stars {
+      display: flex;
+      align-items: center;
+      font-size: rem(11);
+      color: color(yellow);
+      gap: rem(2);
+      margin-bottom: rem(4);
+      i {
+        &::before {
+          margin: 0;
+        }
+      }
+    }
+    .entry-title {
+      font-size: rem(15);
+      font-weight: 600;
+    }
+    p {
+      font-size: rem(12);
+      margin-bottom: 0;
+    }
+  }
+  &.size-md {
+    .customer-avatar {
+      @include min(lg) {
+        width: rem(64);
+        height: rem(64);
+      }
+    }
+    .customer-content {
+      .entry-title {
+        @include min(lg) {
+          font-size: rem(16);
+        }
+      }
+      & > p {
+        @include min(lg) {
+          font-size: rem(13);
+        }
+      }
+    }
+  }
+}

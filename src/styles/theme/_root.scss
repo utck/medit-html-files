@@ -1,0 +1,21 @@
+@use "../utils" as *;
+
+// Theme root settings
+:root {
+  @each $key, $value in $theme {
+    --theme-#{$key}: #{$value};
+  }
+
+  @each $key, $value in $colors {
+    --color-#{$key}: #{$value};
+  }
+}
+
+// Root theme function
+@function theme($value) {
+  @return var(--theme-#{$value});
+}
+
+@function color($value) {
+  @return var(--color-#{$value});
+}

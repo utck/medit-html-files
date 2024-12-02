@@ -1,0 +1,19 @@
+@use '../utils/' as *;
+@use './root' as *;
+
+.site-footer {
+  position: relative;
+  margin-top: rem(30);
+  @include min(lg) {
+    margin-top: rem(56);
+  }
+  .footer-global-row {
+    color: color(footer-foreground);
+    background-color: color(footer-background);
+    & + .footer-global-row {
+      .site-footer-inner {
+        border-top: 1px solid color(footer-border);
+      }
+    }
+  }
+}

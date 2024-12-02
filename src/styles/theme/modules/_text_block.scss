@@ -1,0 +1,24 @@
+@use '../../utils/' as *;
+@use '../root' as *;
+
+.site-text-block {
+  position: relative;
+  .text-block-header {
+    margin-bottom: rem(10);
+    @include min(lg) {
+      margin-bottom: rem(24);
+    }
+    .entry-subtitle {
+      margin-bottom: rem(14);
+      @include min(lg) {
+        margin-bottom: rem(24);
+      }
+    }
+  }
+  .entry-actions {
+    margin-top: rem(30);
+    @include min(lg) {
+      margin-top: rem(60);
+    }
+  }
+}

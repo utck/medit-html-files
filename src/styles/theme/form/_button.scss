@@ -1,0 +1,121 @@
+@use '../../utils/' as *;
+@use '../root' as *;
+
+button:not(.slick-arrow), .button, input[type=submit], .submit, .btn, .single_add_to_cart_button, .single_buy_now_button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: theme(button-font);
+  font-weight: theme(button-font-weight);
+  letter-spacing: theme(button-letter-spacing);
+  line-height: 1;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  gap: rem(6);
+  white-space: nowrap;
+  outline: 1px solid transparent;
+  border-color: transparent;
+  transition: all .1s ease-in-out;
+  &:not(.no-style) {
+    &:not(.btn-link) {
+      position: relative;
+      color: color(gray-900);
+      background-color: color(gray-200);
+      i {
+        font-size: rem(18);
+        line-height: 1;
+        margin-right: rem(-4);
+      }
+      &:hover {
+        background-color: color(gray-300);
+        border-color: transparent;
+      }
+      &:focus-within {
+        transform: translateY(-2px);
+        border-color: transparent;
+        box-shadow: none;
+      }
+      &.btn-primary {
+        background-color: color(primary-background);
+        color: color(primary-foreground);
+        &:hover {
+          background-color: rgba(color(primary-background-rgb), .9);
+        }
+      }
+      &.btn-secondary {
+        background-color: color(secondary-background);
+        color: color(secondary-foreground);
+        &:hover {
+          background-color: rgba(color(secondary-background-rgb), .9);
+        }
+      }
+      &.btn-black {
+        background-color: color(black);
+        color: color(white);
+        &:hover {
+          background-color: rgba(color(black-rgb), .9);
+        }
+      }
+      &.btn-white {
+        background-color: color(white);
+        color: color(black);
+        &:hover {
+          background-color: rgba(color(white-rgb), .9);
+        }
+        &.btn-transparent {
+          color: color(white);
+          background-color: rgba(color(white-rgb), 0.25);
+          backdrop-filter: blur(10px);
+          &:hover {
+            background-color: rgba(color(white-rgb), 0.2);
+          }
+        }
+      }
+    }
+    &:not(.btn-small, .btn-link) {
+      font-size: theme(button-font-size);
+      height: theme(button-height);
+      padding-left: calc(theme(button-height) / 2);
+      padding-right: calc(theme(button-height) / 2);
+      border-radius: theme(radius-base);
+      &.btn-large {
+        @include min(lg) {
+          font-size: theme(button-font-size-large);
+          height: theme(button-height-large);
+          padding-left: calc(theme(button-height-large) / 2);
+          padding-right: calc(theme(button-height-large) / 2);
+          border-radius: theme(radius-base);
+          i {
+            font-size: rem(20);
+            line-height: 1;
+            margin-right: rem(-8);
+          }
+        }
+      }
+    }
+    &.btn-link, &.btn-small {
+      font-size: theme(button-font-size-link);
+      i {
+        font-size: rem(18);
+        line-height: 1;
+        margin-right: rem(-4);
+      }
+    }
+    &.btn-small {
+      font-size: calc(theme(button-font-size) - 1px);
+      height: theme(button-height-small);
+      padding-left: calc(theme(button-height-small) / 2);
+      padding-right: calc(theme(button-height-small) / 2);
+      border-radius: theme(radius-sm);
+    }
+    &.btn-link {
+      color: currentColor;
+      text-underline-offset: rem(6);
+      &:hover {
+        text-decoration-color: transparent;
+      }
+    }
+  }
+}

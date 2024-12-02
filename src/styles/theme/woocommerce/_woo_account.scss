@@ -1,0 +1,327 @@
+@use '../../utils/' as *;
+@use '../root' as *;
+
+.woocommerce-my-account {
+  position: relative;
+  .my-account-user {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: rem(24);
+    @include min(lg) {
+      margin-bottom: rem(40);
+      margin-top: rem(10);
+    }
+    .user-avatar {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: rem(20);
+      width: rem(36);
+      height: rem(36);
+      background-color: color(gray-100);
+      border-radius: 50%;
+      margin-right: rem(10);
+      @include min(md) {
+        font-size: rem(22);
+        width: rem(42);
+        height: rem(42);
+        margin-right: rem(15);
+      }
+      i {
+        line-height: 1;
+      }
+    }
+    .user-detail {
+      line-height: 1;
+      span {
+        display: block;
+        font-size: rem(12);
+        font-weight: 500;
+        color: color(gray-400);
+        margin-bottom: rem(5);
+      }
+      p {
+        font-size: rem(14);
+        font-weight: 700;
+        margin-bottom: 0;
+      }
+    }
+    .user-menu-toggle {
+      display: inline-flex;
+      margin-left: auto;
+      padding-left: rem(15);
+      @include min(lg) {
+        display: none;
+      }
+      a {
+        display: inline-flex;
+        align-items: center;
+        color: currentColor;
+        text-decoration: none;
+        height: rem(36);
+        padding-left: rem(8);
+        padding-right: rem(8);
+        i {
+          font-size: rem(20);
+          line-height: 1;
+          margin-right: rem(6);
+        }
+        span {
+          font-size: rem(12);
+          font-weight: 600;
+          text-transform: uppercase;
+          line-height: 1;
+          color: color(gray-600);
+        }
+      }
+    }
+  }
+  .my-account-inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(15);
+    @include min(lg) {
+      gap: rem(40);
+    }
+    & > * {
+      flex: 0 0 auto;
+      width: 100%;
+      @include min(lg) {
+        &.my-account-navigation {
+          width: rem(300);
+        }
+        &.woocommerce-MyAccount-content {
+          flex: 1 0 0%;
+        }
+      }
+    }
+    .my-account-navigation {
+      display: none;
+      @include min(lg) {
+        display: block;
+      }
+      @include max(lg) {
+        &.active {
+          display: block;
+        }
+      }
+      ul {
+        position: relative;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        li {
+          & + li {
+            border-top: 1px solid color(gray-200);
+          }
+          a {
+            display: flex;
+            align-items: center;
+            font-size: rem(14);
+            font-weight: 600;
+            color: currentColor;
+            text-decoration: none;
+            padding-top: rem(12);
+            padding-bottom: rem(12);
+            padding-left: rem(12);
+            padding-right: rem(12);
+            transition: all .1s $ease;
+            &:hover {
+              color: color(primary-background);
+            }
+          }
+          &.is-active {
+            color: color(white);
+            background-color: color(black);
+            a {
+              color: currentColor;
+            }
+          }
+        }
+      }
+    }
+    .woocommerce-MyAccount-content {
+      p {
+        font-size: rem(14);
+        a {
+          font-weight: 500;
+          color: color(blue);
+        }
+      }
+    }
+  }
+}
+
+.site-login {
+  padding: rem(40) 0 0;
+  @include min(md) {
+    padding: rem(90) 0;
+  }
+  .site-login-inner {
+    max-width: rem(480);
+    margin-left: auto;
+    margin-right: auto;
+    .site-login-overflow {
+      position: relative;
+      overflow: hidden;
+      padding-left: rem(4);
+      padding-right: rem(4);
+      .login-page-tab {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        gap: rem(20);
+        margin-bottom: rem(20);
+        @include min(lg) {
+          margin-bottom: rem(30);
+        }
+        li {
+          a {
+            position: relative;
+            font-size: rem(22);
+            font-weight: 600;
+            color: color(gray-400);
+            text-decoration: none;
+            padding-left: rem(4);
+            padding-right: rem(4);
+            transition: all .1s $ease;
+            @include min(lg) {
+              font-size: rem(28);
+            }
+            &.active {
+              color: color(black);
+            }
+          }
+        }
+      }
+      .login-form-container {
+        display: flex;
+        width: 200%;
+        transform: translateX(0);
+        transition: all .4s $ease-in-out-quad;
+        & > * {
+          padding: rem(1);
+          width: 100%;
+          transition: transform .4s $ease-in-out-quad, opacity .4s $ease-in-out-quad;
+          &.register-form {
+            opacity: 0;
+          }
+          &.login-form {
+            & > p {
+              font-size: rem(13);
+              text-align: center;
+            }
+            .lost-password {
+              display: flex;
+              flex-wrap: wrap;
+              align-items: center;
+              justify-content: space-between;
+              p {
+                font-size: rem(13);
+                margin-bottom: 0;
+                .woocommerce-form__label-for-checkbox {
+                  position: relative;
+                  display: inline;
+                  span {
+                    position: relative;
+                    display: inline;
+                    font-size: rem(12);
+                    &::before {
+                      content: '';
+                      position: relative;
+                      display: inline-flex;
+                      align-items: center;
+                      justify-content: center;
+                      width: rem(16);
+                      height: rem(16);
+                      border-radius: rem(4);
+                      background-color: color(white);
+                      border: 1px solid color(gray-300);
+                      margin-right: rem(10);
+                      top: -#{rem(5)};
+                      transition: border-color .05s $ease;
+                    }
+                    a {
+                      margin-left: rem(4);
+                    }
+                  }
+                  input {
+                    position: absolute;
+                    opacity: 0;
+                    left: -9999px;
+                    &:checked + span {
+                      &::before {
+                        background-color: color(primary-background);
+                        border-color: transparent;
+                        box-shadow: none;
+                      }
+                      &::after {
+                        position: absolute;
+                        font-family: 'klbtheme';
+                        font-size: rem(14);
+                        font-weight: 700;
+                        text-shadow: 0 0 0 currentColor;
+                        content: '\e85f'; 
+                        top: -#{rem(3)};
+                        left: rem(1);
+                        color: color(white);
+                      }
+                    }
+                  }
+                }
+                &.woocommerce-LostPassword {
+                  a {
+                    text-decoration: none;
+                    color: color(blue);
+                  }
+                }
+              }
+            }
+          }
+          label {
+            display: block;
+            font-size: rem(13);
+            margin-bottom: rem(5);
+          }
+          button {
+            text-transform: uppercase;
+            width: 100%;
+            margin-top: rem(20);
+            color: color(white);
+            background-color: color(primary-background);
+            &:hover {
+              opacity: .9;
+            }
+            @include min(lg) {
+              height: rem(46);
+            }
+          }
+          &.register-form {
+            & > p {
+              font-size: rem(13);
+              text-align: center;
+            }
+            .woocommerce-privacy-policy-text {
+              font-size: rem(12);
+            }
+          }
+        }
+        &.show-register-form {
+          transform: translateX(-50%);
+          .login-form {
+            opacity: 0;
+          }
+          .register-form {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}

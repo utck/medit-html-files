@@ -1,0 +1,21 @@
+@use '../utils/' as *;
+@use './root' as *;
+
+.site-footer-copyright {
+  .site-footer-inner {
+    padding-top: rem(20);
+    padding-bottom: rem(36);
+    @include min(lg) {
+      padding-top: rem(36);
+      padding-bottom: rem(46);
+    }
+    .site-copyright-text {
+      font-size: rem(13);
+      a {
+        font-weight: 600;
+        color: color(footer-link);
+        text-decoration: none;
+      }
+    }
+  }
+}

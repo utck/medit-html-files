@@ -1,0 +1,191 @@
+---
+layout: default
+title: Medit Yoga
+logo: default
+mobile-toggle: false
+header-type: default
+header-style: style-1
+---
+
+<div class="site-page-header text-center header-bordered">
+  <div class="container">
+    <div class="page-header-inner">
+      <h1 class="entry-title title-6xl tracking-tighter">Shop</h1>
+      <div class="entry-description">
+        <p class="description-xl text-gray-500">Dialog telerat era och metrostat heterolog. Prorad plaren homor tempodiktisk. Betiligen percentrism mipasam i binetik. Bioliga benar profili mikrofoni. Regen polyliga profaktisk nitäde.</p>
+      </div><!-- entry-description -->
+    </div><!-- page-header-inner -->
+  </div><!-- container -->
+</div><!-- site-page-header -->
+
+<div class="page-inner-content">
+  <div class="container">
+    
+    <div class="row content-wrapper flex-row-reverse gap-y-30">
+      <div class="col-12 col-lg-9 primary-column">
+        <div class="before-shop-loop">
+          <div class="column left">
+            <a href="#" class="filter-button toggle-button filter-toggle mobile-only">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#000000" fill="none">
+                <path d="M8.85746 12.5061C6.36901 10.6456 4.59564 8.59915 3.62734 7.44867C3.3276 7.09253 3.22938 6.8319 3.17033 6.3728C2.96811 4.8008 2.86701 4.0148 3.32795 3.5074C3.7889 3 4.60404 3 6.23433 3H17.7657C19.396 3 20.2111 3 20.672 3.5074C21.133 4.0148 21.0319 4.8008 20.8297 6.37281C20.7706 6.83191 20.6724 7.09254 20.3726 7.44867C19.403 8.60062 17.6261 10.6507 15.1326 12.5135C14.907 12.6821 14.7583 12.9567 14.7307 13.2614C14.4837 15.992 14.2559 17.4876 14.1141 18.2442C13.8853 19.4657 12.1532 20.2006 11.226 20.8563C10.6741 21.2466 10.0043 20.782 9.93278 20.1778C9.79643 19.0261 9.53961 16.6864 9.25927 13.2614C9.23409 12.9539 9.08486 12.6761 8.85746 12.5061Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              Filter
+            </a>
+            <p class="woocommerce-result-count">Showing 1–16 of 66 results</p>
+          </div><!-- column -->
+          <div class="column right">
+            <div class="shop-sorting-wrapper">
+              <div class="sorting-products">
+                <span>Sort:</span>
+                <form class="woocommerce-ordering" method="get">
+                  <select name="orderby" class="orderby" aria-label="Shop order">
+                    <option value="popularity">Sort by popularity</option>
+                    <option value="rating">Sort by average rating</option>
+                    <option value="date" selected="selected">Sort by latest</option>
+                    <option value="price">Sort by price: low to high</option>
+                    <option value="price-desc">Sort by price: high to low</option>
+                  </select>
+                <input type="hidden" name="paged" value="1">
+                <input type="hidden" name="_pjax" value=".site-content">
+              </form>
+              </div><!-- sorting-products -->
+            </div><!-- shop-sorting-wrapper -->
+          </div><!-- column -->
+        </div><!-- before-shop-loop -->
+
+        <div class="shop-products-wrapper">
+          <div class="products site-project-grid grid-column-1 grid-column-sm-3 gap-base">
+            {{#each products-page.products}}
+              {{> product-box}}
+            {{/each}}
+          </div><!-- products -->
+        </div><!-- shop-products-wrapper -->
+  
+        <nav class="woocommerce-pagination">
+          <ul class="page-numbers">
+            <li><a class="prev page-numbers" href="#"><i class="pp-chevron-left"></i></a></li>
+            <li><span aria-current="page" class="page-numbers current">1</span></li>
+            <li><a class="page-numbers" href="#">2</a></li>
+            <li><a class="page-numbers" href="#">3</a></li>
+            <li><a class="page-numbers" href="#">4</a></li>
+            <li><span class="dots">...</span></li>
+            <li><a class="page-numbers" href="#">2</a></li>
+            <li><a class="page-numbers" href="#">3</a></li>
+            <li><a class="page-numbers" href="#">4</a></li>
+            <li><a class="next page-numbers" href="#"><i class="pp-chevron-right"></i></a></li>
+          </ul>
+        </nav><!-- woocommerce-pagination -->
+      </div><!-- col-12 -->
+      <div class="col-12 col-lg-3 secondary-column desktop-only sticky-sidebar">
+        <div class="widget">
+          <h4 class="widget-title">Product Categories</h4>
+          <div class="module-body">
+            <ul class="woocommerce-widget-layered-nav-list">
+              <li>
+                <div class="type-button">
+                  <input id="01" name="01" type="checkbox">
+                  <label for="01">
+                    <span class="button-box"></span>
+                    <a rel="nofollow" href="#">Fruits & Vegetables</a>
+                    <span class="count">(1)</span>
+                  </label>
+                </div><!-- type-button -->
+              </li>
+              <li>
+                <div class="type-button">
+                  <span class="button-box"></span>
+                  <a rel="nofollow" href="#">Meats & Seafood</a>
+                  <span class="count">(1)</span>
+                </div><!-- type-button -->
+              </li>
+              <li class="chosen">
+                <div class="type-button">
+                  <span class="button-box"></span>
+                  <a rel="nofollow" href="#">Breakfast & Dairy</a>
+                  <span class="count">(1)</span>
+                </div><!-- type-button -->
+              </li>
+              <li>
+                <div class="type-button">
+                  <span class="button-box"></span>
+                  <a rel="nofollow" href="#">Breads & Bakery</a>
+                  <span class="count">(1)</span>
+                </div><!-- type-button -->
+              </li>
+              <li>
+                <div class="type-button">
+                  <span class="button-box"></span>
+                  <a rel="nofollow" href="#">Beverages</a>
+                  <span class="count">(1)</span>
+                </div><!-- type-button -->
+              </li>
+            </ul>
+          </div><!-- module-body -->
+        </div><!-- widget -->
+  
+        <div class="widget">
+          <h4 class="widget-title">Widget price filter</h4>
+          <div class="widget-body">
+            <form action="#">
+              <div class="price_slider_wrapper">
+                <div class="price_slider_amount">
+                  <div class="min-price">
+                    <span class="price-placeholder">Min Price</span>
+                    <input type="text" id="min_price" name="min_price" value="0" data-min="0" placeholder="Min price">
+                  </div><!-- min-price -->
+                  <span class="separator">-</span>
+                  <div class="max-price">
+                    <span class="price-placeholder">Max Price</span>
+                    <input type="text" id="max_price" name="max_price" value="60" data-max="60" placeholder="Max price">
+                  </div><!-- max-price -->
+                </div><!-- price_slider_amount -->
+                <div class="price_slider ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content">
+                  <div class="ui-slider-range ui-corner-all ui-widget-header"></div>
+                  <span class="ui-slider-handle ui-corner-all ui-state-default"></span>
+                  <span class="ui-slider-handle ui-corner-all ui-state-default"></span>
+                </div><!-- price_slider -->
+                <div class="price_slider_bottom">
+                  <button type="submit" class="button">Filter</button>
+                  <div class="price_label" style="">
+                    <price><span class="from">£0</span> — <span class="to">£60</span></price>
+                  </div><!-- price_label -->
+                  <input type="hidden" name="filter_cat" value="31">
+                  <div class="clear"></div>
+                </div><!-- price_slider_bottom -->
+              </div><!-- price_slider_wrapper -->
+            </form>
+          </div><!-- widget-body -->
+        </div><!-- widget -->
+  
+        <div class="widget">
+          <h4 class="widget-title">Product Categories</h4>
+          <div class="module-body">
+            <ul class="widget-checkbox-list">
+              <li>
+                <a href="#" class="type-button">
+                  <input name="stockonsale" value="instock" id="instock" type="checkbox">
+                  <label for="instock">
+                    <span class="button-box"></span>
+                    <span class="button-text">In Stock</span>
+                    <span class="count">(1)</span>
+                  </label>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="type-button">
+                  <input name="stockonsale" value="onsale" id="onsale" type="checkbox">
+                  <label for="onsale">
+                    <span class="button-box"></span>
+                    <span class="button-text">On Sale</span>
+                    <span class="count">(1)</span>
+                  </label>
+                </a>
+              </li>
+            </ul>
+          </div><!-- module-body -->
+        </div><!-- widget -->
+      </div><!-- col-12 -->
+    </div><!-- content-wrapper -->
+
+  </div> <!-- container -->
+</div><!-- page-inner-content -->

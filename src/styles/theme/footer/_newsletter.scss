@@ -1,0 +1,102 @@
+@use '../utils/' as *;
+@use './root' as *;
+
+.site-footer-newsletter {
+  .site-footer-inner {
+    border-top: 1px solid color(gray-200);
+    padding-top: rem(36);
+    padding-bottom: rem(36);
+    @include min(lg) {
+      padding-top: rem(66);
+      padding-bottom: rem(66);
+    }
+    & > .column {
+      text-align: center;
+      justify-content: center;
+      flex: 0 0 auto;
+      width: 100%;
+      @include min(lg) {
+        text-align: left;
+        justify-content: flex-start;
+        width: 50%;
+      }
+      &.form-column {
+        flex-direction: column;
+        align-items: center;
+        gap: rem(12);
+        @include min(lg) {
+          justify-content: flex-end;
+          align-items: flex-end;
+        }
+        .mc4wp-form {
+          max-width: rem(440);
+          width: 100%;
+          .mc4wp-form-fields {
+            position: relative;
+            display: flex;
+            align-items: center;
+            border: 1px solid color(gray-300);
+            border-radius: theme(radius-sm);
+            padding: rem(4);
+            transition: all .15s $ease-in-out;
+            @include min(lg) {
+              border-radius: calc(theme(radius-lg) + rem(2));
+            }
+            &:has(input:focus) {
+              border-color: color(primary-background);
+              box-shadow: 0 0 0 rem(3) rgba(color(primary-background-rgb), 0.15);
+            }
+            input {
+              flex: 1 0 0%;
+              width: auto;
+              border: 0;
+              box-shadow: none;
+              outline: none;
+              &::placeholder {
+                color: color(gray-500);
+              }
+            }
+            button {
+              color: color(white);
+              background-color: color(primary-background);
+              &:hover {
+                background-color: rgba(color(primary-background-rgb), 0.9);
+              }
+              @include min(lg) {
+                height: rem(50);
+              }
+            }
+          }
+        }
+        .privacy-text {
+          font-size: rem(12);
+          color: color(gray-500);
+          margin-bottom: 0;
+          a {
+            font-weight: 500;
+            color: color(gray-800);
+            text-underline-offset: rem(4);
+            text-decoration-color: color(gray-400);
+          }
+        }
+      }
+    }
+    .subscribe-text {
+      .entry-title {
+        font-size: rem(22);
+        font-weight: 600;
+        @include min(lg) {
+          font-size: rem(36);
+        }
+      }
+      p {
+        font-size: rem(14);
+        color: color(gray-500);
+        margin-bottom: 0;
+        @include min(lg) {
+          font-size: rem(16);
+        }
+      }
+    }
+  }
+}

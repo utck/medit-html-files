@@ -1,0 +1,55 @@
+@use '../../utils/' as *;
+@use '../root' as *;
+
+.accordion {
+  --bs-accordion-color: color(gray-900);
+  --bs-accordion-border-color: transparent;
+  --bs-accordion-border-radius: 0;
+  --bs-accordion-inner-border-radius: 0;
+  --bs-accordion-btn-bg: transparent;
+  .accordion-header {
+    transform: translateZ(0);
+  }
+  .accordion-button {
+    font-size: rem(16) !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    height: auto !important;
+    color: var(--bs-accordion-color) !important;
+    background-color: transparent !important;
+    border-radius: 0 !important;
+    border-bottom: 1px solid color(gray-200) !important;
+    outline: none !important;
+    box-shadow: none !important;
+    padding-top: rem(20) !important;
+    padding-bottom: rem(20) !important;
+    transform: translateZ(0) translateX(0) translateY(0) !important;
+    @include min(lg) {
+      font-size: rem(18) !important;
+      padding-top: rem(24) !important;
+      padding-bottom: rem(24) !important;
+    }
+  }
+  .accordion-body {
+    font-size: rem(14);
+    padding-left: 0;
+    padding-right: 0;
+    color: color(gray-600);
+    transform: translateZ(0);
+    @include min(lg) {
+      font-size: rem(16);
+    }
+  }
+  &.large {
+    .accordion-button {
+      @include min(lg) {
+        font-size: rem(26) !important;
+      }
+    }
+    .accordion-body {
+      @include min(lg) {
+        font-size: rem(18) !important;
+      }
+    }
+  }
+}

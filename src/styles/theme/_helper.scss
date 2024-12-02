@@ -1,0 +1,333 @@
+@use '../utils/' as *;
+@use './root' as *;
+
+// Mobile only
+.mobile-only {
+  @include min(lg) {
+    display: none !important;
+  }
+}
+
+// Desktop only
+.desktop-only {
+  @include max(lg) {
+    display: none !important;
+  }
+}
+
+// Black and white text colors
+.text-white { color: color(white); }
+.text-black { color: color(black); }
+// Primary text colors
+.text-primary { color: color(primary-background) !important; }
+.text-secondary { color: color(secondary-background) !important; }
+// Gray text colors
+.text-gray-50 { color: color(gray-50); }
+.text-gray-100 { color: color(gray-100); }
+.text-gray-200 { color: color(gray-200); }
+.text-gray-300 { color: color(gray-300); }
+.text-gray-400 { color: color(gray-400); }
+.text-gray-500 { color: color(gray-500); }
+.text-gray-600 { color: color(gray-600); }
+.text-gray-700 { color: color(gray-700); }
+.text-gray-800 { color: color(gray-800); }
+.text-gray-900 { color: color(gray-900); }
+.text-gray-950 { color: color(gray-950); }
+// Default text colors
+.text-red { color: color(red); }
+.text-green { color: color(green); }
+.text-orange { color: color(orange); }
+.text-yellow { color: color(yellow); }
+.text-blue { color: color(blue); }
+
+// Black and white bg colors
+.bg-white { background-color: color(white); }
+.bg-black { background-color: color(black); }
+// Primary bg colors
+.bg-primary { background-color: color(primary-background); }
+.bg-secondary { background-color: color(secondary-background); }
+// Gray bg colors
+.bg-gray-50 { background-color: color(gray-50); }
+.bg-gray-100 { background-color: color(gray-100); }
+.bg-gray-200 { background-color: color(gray-200); }
+.bg-gray-300 { background-color: color(gray-300); }
+.bg-gray-400 { background-color: color(gray-400); }
+.bg-gray-500 { background-color: color(gray-500); }
+.bg-gray-600 { background-color: color(gray-600); }
+.bg-gray-700 { background-color: color(gray-700); }
+.bg-gray-800 { background-color: color(gray-800); }
+.bg-gray-900 { background-color: color(gray-900); }
+.bg-gray-950 { background-color: color(gray-950); }
+// Default bg colors
+.bg-red { background-color: color(red); }
+.bg-green { background-color: color(green); }
+.bg-orange { background-color: color(orange); }
+.bg-yellow { background-color: color(yellow); }
+.bg-blue { background-color: color(blue); }
+
+// Black and white border colors
+.border-white { border-color: color(white); }
+.border-black { border-color: color(black); }
+// Primary border colors
+.border-primary { border-color: color(primary-background) !important; }
+.border-secondary { border-color: color(secondary-background) !important; }
+// Gray border colors
+.border-gray-50 { border-color: color(gray-50) !important; }
+.border-gray-100 { border-color: color(gray-100) !important; }
+.border-gray-200 { border-color: color(gray-200) !important; }
+.border-gray-300 { border-color: color(gray-300) !important; }
+.border-gray-400 { border-color: color(gray-400) !important; }
+.border-gray-500 { border-color: color(gray-500) !important; }
+.border-gray-600 { border-color: color(gray-600) !important; }
+.border-gray-700 { border-color: color(gray-700) !important; }
+.border-gray-800 { border-color: color(gray-800) !important; }
+.border-gray-900 { border-color: color(gray-900) !important; }
+.border-gray-950 { border-color: color(gray-950) !important; }
+// Default border colors
+.border-red { border-color: color(red); }
+.border-green { border-color: color(green); }
+.border-orange { border-color: color(orange); }
+.border-yellow { border-color: color(yellow); }
+.border-blue { border-color: color(blue); }
+
+// Margins
+.margin-auto { margin: auto; }
+.margin-0 { margin: 0; }
+.margin {
+  margin: var(--p);
+  @include min(md) {
+    margin: var(--p-md);
+  }
+  @include min(lg) {
+    margin: var(--p-lg);
+  }
+}
+.margin-auto-x { margin-left: auto; margin-right: auto; }
+.margin-auto-y { margin-top: auto; margin-bottom: auto; }
+.margin-top {
+  margin-top: var(--mt);
+  @include min(md) {
+    margin-top: var(--mt-md);
+  }
+  @include min(lg) {
+    margin-top: var(--mt-lg);
+  }
+}
+.margin-bottom {
+  margin-bottom: var(--mb);
+  @include min(md) {
+    margin-bottom: var(--mb-md);
+  }
+  @include min(lg) {
+    margin-bottom: var(--mb-lg);
+  }
+}
+.margin-right {
+  margin-right: var(--mr);
+  @include min(md) {
+    margin-right: var(--mr-md);
+  }
+  @include min(lg) {
+    margin-right: var(--mr-lg);
+  }
+}
+.margin-left {
+  margin-left: var(--ml);
+  @include min(md) {
+    margin-left: var(--ml-md);
+  }
+  @include min(lg) {
+    margin-left: var(--ml-lg);
+  }
+}
+
+// Paddings
+.padding-0 { padding: 0; }
+.padding {
+  padding: var(--p);
+  @include min(md) {
+    padding: var(--p-md);
+  }
+  @include min(lg) {
+    padding: var(--p-lg);
+  }
+}
+.padding-top {
+  padding-top: var(--pt);
+  @include min(md) {
+    padding-top: var(--pt-md);
+  }
+  @include min(lg) {
+    padding-top: var(--pt-lg);
+  }
+}
+.padding-bottom {
+  padding-bottom: var(--pb);
+  @include min(md) {
+    padding-bottom: var(--pb-md);
+  }
+  @include min(lg) {
+    padding-bottom: var(--pb-lg);
+  }
+}
+.padding-right {
+  padding-right: var(--pr);
+  @include min(md) {
+    padding-right: var(--pr-md);
+  }
+  @include min(lg) {
+    padding-right: var(--pr-lg);
+  }
+}
+.padding-left {
+  padding-left: var(--pl);
+  @include min(md) {
+    padding-left: var(--pl-md);
+  }
+  @include min(lg) {
+    padding-left: var(--pl-lg);
+  }
+}
+.header-padding {
+  padding-top: calc(theme('header-height') + rem(20));
+  @include min(lg) {
+    padding-top: calc(theme('header-height-desktop') + rem(40));
+  }
+}
+
+// Left
+.left { 
+  left: var(--l);
+  @include min(md) {
+    left: var(--l-md);
+  }
+  @include min(lg) {
+    left: var(--l-lg);
+  }
+}
+// Right
+.right { 
+  right: var(--r);
+  @include min(md) {
+    right: var(--r-md);
+  }
+  @include min(lg) {
+    right: var(--r-lg);
+  }
+}
+// Top
+.top { 
+  top: var(--t);
+  @include min(md) {
+    top: var(--t-md);
+  }
+  @include min(lg) {
+    top: var(--t-lg);
+  }
+}
+// Bottom
+.bottom { 
+  bottom: var(--b);
+  @include min(md) {
+    bottom: var(--b-md);
+  }
+  @include min(lg) {
+    bottom: var(--b-lg);
+  }
+}
+
+// Max width
+.max-width {
+  max-width: var(--max-w);
+  @include min(md) {
+    max-width: var(--max-w-md);
+  }
+  @include min(lg) {
+    max-width: var(--max-w-lg);
+  }
+}
+
+// Max height
+.max-height {
+  max-height: var(--max-h);
+  @include min(md) {
+    max-height: var(--max-h-md);
+  }
+  @include min(lg) {
+    max-height: var(--max-h-lg);
+  }
+}
+
+// Custom width
+.width { 
+  width: var(--w);
+  @include min(md) {
+    width: var(--w-md);
+  }
+  @include min(lg) {
+    width: var(--w-lg);
+  }
+}
+
+// Custom height
+.height {
+  height: var(--h);
+  @include min(md) {
+    height: var(--h-md);
+  }
+  @include min(lg) {
+    height: var(--h-lg);
+  }
+}
+
+// Custom background
+.custom-background {
+  background-color: var(--background);
+}
+
+// Custom color
+.custom-color {
+  color: var(--color);
+}
+
+// Custom gradient
+.custom-gradient {
+  background: linear-gradient(to var(--grandient-direction), var(--grandient-start-color), var(--grandient-end-color));
+}
+
+// Highlighted text
+.highlighted-text {
+  background-clip: text;
+  &.with-gradient {
+    background: linear-gradient(var(--gradient-angle), var(--gradient-start), var(--gradient-end));
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  &.with-image {
+    background-image: var(--image-url);
+    background-repeat: no-repeat;
+    color: transparent;
+  }
+}
+
+// Row gaps
+.gap-y-0 { row-gap: 0; }
+.gap-y-5 { row-gap: rem(5); }
+.gap-y-10 { row-gap: rem(10); }
+.gap-y-15 { row-gap: rem(15); }
+.gap-y-20 { row-gap: rem(20); }
+.gap-y-30 { row-gap: rem(30); }
+.gap-y-40 { row-gap: rem(40); }
+
+// Column gaps
+.gap-x-0 { column-gap: 0; }
+.gap-x-5 { column-gap: rem(5); }
+.gap-x-10 { column-gap: rem(10); }
+.gap-x-15 { column-gap: rem(15); }
+.gap-x-20 { column-gap: rem(20); }
+
+// Rounded
+.rounded-sm { border-radius: theme(radius-sm); }
+.rounded-base { border-radius: theme(radius-base); }
+.rounded-lg { border-radius: theme(radius-lg); }

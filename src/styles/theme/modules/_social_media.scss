@@ -1,0 +1,148 @@
+@use '../../utils/' as *;
+@use '../root' as *;
+
+.site-social-media {
+  --icon-size: 14px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: rem(4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  a {
+    display: inline-flex;
+    align-items: center;
+    transition: all .1s $ease-in-out;
+    i {
+      &.pp-social-instagram {
+        font-size: calc(var(--icon-size) + 2px);
+      }
+    }
+  }
+  &.social-list {
+    flex-direction: column;
+    li {
+      width: 100%;
+      a {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        text-decoration: none;
+        padding: rem(6) rem(8);
+        .site-social-icon {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: rem(30);
+          height: rem(30);
+          margin-right: rem(20);
+        }
+        .site-social-content {
+          display: flex;
+          flex: 1 0 0%;
+          line-height: 1;
+          padding-right: rem(10);
+          p {
+            font-weight: 600;
+            margin-bottom: 0;
+          }
+          span {
+            position: relative;
+            font-size: rem(10);
+            font-weight: 700;
+            text-transform: uppercase;
+            opacity: .5;
+            top: rem(2);
+            margin-left: auto;
+          }
+        }
+      }
+    }
+  }
+  &.social-vertical {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  &.social-boxed {
+    a {
+      font-size: var(--icon-size);
+      justify-content: center;
+      width: rem(30);
+      height: rem(30);
+      border-radius: theme(radius-sm);
+    }
+    &.social-size-md {
+      --icon-size: 15px;
+      a {
+        font-size: rem(15);
+        width: rem(36);
+        height: rem(36);
+      }
+    }
+  }
+  &.social-rounded {
+    a {
+      border-radius: 50% !important;
+    }
+  }
+  &.social-white {
+    a {
+      color: color(black);
+      background-color: color(white);
+      &:hover {
+        color: color(white);
+        background-color: color(black);
+      }
+    }
+  }
+  &.social-black {
+    a {
+      color: color(white);
+      background-color: color(black);
+      &:hover {
+        color: color(black);
+        background-color: color(white);
+      }
+    }
+  }
+  &.social-gray {
+    a {
+      color: color(gray-800);
+      background-color: color(gray-200);
+      &:hover {
+        color: color(black);
+        background-color: color(gray-300);
+      }
+    }
+  }
+  &.social-light-color {
+    a {
+      position: relative;
+      border-radius: theme(radius-sm);
+      overflow: hidden;
+      @each $theme, $color in $social-media-colors {
+        &.#{$theme} {
+          color: $color;
+          &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: $color;
+            opacity: 0.08;
+            transition: all .1s $ease-in-out;
+          }
+          &:hover {
+            &::before {
+              opacity: 0.13;
+            }
+          }
+        }
+      }
+    }
+  }
+}

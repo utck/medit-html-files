@@ -1,0 +1,116 @@
+@use '../../utils/' as *;
+@use '../root' as *;
+
+.site-pricing-table {
+  border: 1px solid color(gray-200);
+  outline: 1px solid transparent;
+  border-radius: theme(radius-sm);
+  @include min(lg) {
+    border-radius: theme(radius-base);
+  }
+  .pricing-table-header {
+    padding: rem(14) rem(20);
+    @include min(lg) {
+      padding: rem(24) rem(28);
+    }
+    .entry-title {
+      font-size: rem(18);
+      font-weight: 600;
+      @include min(lg) {
+        font-size: rem(22);
+      }
+    }
+    .entry-description {
+      font-size: rem(12);
+      color: color(gray-500);
+      @include min(lg) {
+        font-size: rem(13);
+      }
+    }
+  }
+  .pricing-table-price {
+    padding-left: rem(20);
+    padding-right: rem(20);
+    padding-bottom: rem(14);
+    @include min(lg) {
+      padding-left: rem(28);
+      padding-right: rem(28);
+      padding-bottom: rem(20);
+    }
+    .price-value {
+      display: block;
+      font-size: rem(24);
+      font-weight: 600;
+      line-height: 1;
+      margin-bottom: rem(4);
+      @include min(lg) {
+        font-size: rem(36);
+        margin-bottom: rem(8);
+      }
+      .period {
+        font-size: rem(14);
+        color: color(gray-400);
+        @include min(lg) {
+          font-size: rem(18);
+        }
+      }
+    }
+    & > p {
+      font-size: rem(13);
+    }
+  }
+  .pricing-table-body {
+    padding-left: rem(20);
+    padding-right: rem(20);
+    @include min(lg) {
+      padding-left: rem(28);
+      padding-right: rem(28);
+    }
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      li {
+        display: flex;
+        flex-wrap: wrap;
+        font-size: rem(14);
+        gap: rem(8);
+        & + li {
+          margin-top: rem(10);
+          @include min(lg) {
+            margin-top: rem(14);
+          }
+        }
+        .pricing-icon {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          font-size: rem(14);
+          font-weight: 900;
+          width: rem(20);
+          height: rem(20);
+          border-radius: 50%;
+          border: 1px solid color(gray-300);
+          background-color: color(gray-50);
+        }
+      }
+    }
+  }
+  .pricing-table-footer {
+    padding: rem(14) rem(20);
+    @include min(lg) {
+      padding: rem(24) rem(28);
+    }
+    a {
+      width: 100%;
+    }
+  }
+  &.featured {
+    background-color: rgba(color(primary-background-rgb), 0.02);
+    border-color: color(primary-background);
+    outline-color: color(primary-background);
+    .price-value {
+      color: color(primary-background);
+    }
+  }
+}

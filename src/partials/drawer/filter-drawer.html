@@ -1,0 +1,120 @@
+<div class="site-drawer filter-drawer">
+  <div class="site-drawer-inner">
+    <div class="site-drawer-row site-drawer-header flex items-center justify-between">
+      <h3 class="entry-title">Filter Products</h3>
+      {{> close-button}}
+    </div><!-- site-drawer-row -->
+    <div class="site-drawer-body">
+      <div class="product-filters">
+        <div class="widget">
+          <h4 class="widget-title">Product Categories</h4>
+          <div class="module-body">
+            <ul class="woocommerce-widget-layered-nav-list">
+              <li>
+                <div class="type-button">
+                  <input id="01" name="01" type="checkbox">
+                  <label for="01">
+                    <span class="button-box"></span>
+                    <a rel="nofollow" href="#">Fruits & Vegetables</a>
+                    <span class="count">(1)</span>
+                  </label>
+                </div><!-- type-button -->
+              </li>
+              <li>
+                <div class="type-button">
+                  <span class="button-box"></span>
+                  <a rel="nofollow" href="#">Meats & Seafood</a>
+                  <span class="count">(1)</span>
+                </div><!-- type-button -->
+              </li>
+              <li class="chosen">
+                <div class="type-button">
+                  <span class="button-box"></span>
+                  <a rel="nofollow" href="#">Breakfast & Dairy</a>
+                  <span class="count">(1)</span>
+                </div><!-- type-button -->
+              </li>
+              <li>
+                <div class="type-button">
+                  <span class="button-box"></span>
+                  <a rel="nofollow" href="#">Breads & Bakery</a>
+                  <span class="count">(1)</span>
+                </div><!-- type-button -->
+              </li>
+              <li>
+                <div class="type-button">
+                  <span class="button-box"></span>
+                  <a rel="nofollow" href="#">Beverages</a>
+                  <span class="count">(1)</span>
+                </div><!-- type-button -->
+              </li>
+            </ul>
+          </div><!-- module-body -->
+        </div><!-- widget -->
+  
+        <div class="widget">
+          <h4 class="widget-title">Widget price filter</h4>
+          <div class="widget-body">
+            <form action="#">
+              <div class="price_slider_wrapper">
+                <div class="price_slider_amount">
+                  <div class="min-price">
+                    <span class="price-placeholder">Min Price</span>
+                    <input type="text" id="min_price" name="min_price" value="0" data-min="0" placeholder="Min price">
+                  </div><!-- min-price -->
+                  <span class="separator">-</span>
+                  <div class="max-price">
+                    <span class="price-placeholder">Max Price</span>
+                    <input type="text" id="max_price" name="max_price" value="60" data-max="60" placeholder="Max price">
+                  </div><!-- max-price -->
+                </div><!-- price_slider_amount -->
+                <div class="price_slider ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content">
+                  <div class="ui-slider-range ui-corner-all ui-widget-header"></div>
+                  <span class="ui-slider-handle ui-corner-all ui-state-default"></span>
+                  <span class="ui-slider-handle ui-corner-all ui-state-default"></span>
+                </div><!-- price_slider -->
+                <div class="price_slider_bottom">
+                  <button type="submit" class="button">Filter</button>
+                  <div class="price_label" style="">
+                    <price><span class="from">£0</span> — <span class="to">£60</span></price>
+                  </div><!-- price_label -->
+                  <input type="hidden" name="filter_cat" value="31">
+                  <div class="clear"></div>
+                </div><!-- price_slider_bottom -->
+              </div><!-- price_slider_wrapper -->
+            </form>
+          </div><!-- widget-body -->
+        </div><!-- widget -->
+  
+        <div class="widget">
+          <h4 class="widget-title">Product Categories</h4>
+          <div class="module-body">
+            <ul class="widget-checkbox-list">
+              <li>
+                <a href="#" class="type-button">
+                  <input name="stockonsale" value="instock" id="instock" type="checkbox">
+                  <label for="instock">
+                    <span class="button-box"></span>
+                    <span class="button-text">In Stock</span>
+                    <span class="count">(1)</span>
+                  </label>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="type-button">
+                  <input name="stockonsale" value="onsale" id="onsale" type="checkbox">
+                  <label for="onsale">
+                    <span class="button-box"></span>
+                    <span class="button-text">On Sale</span>
+                    <span class="count">(1)</span>
+                  </label>
+                </a>
+              </li>
+            </ul>
+          </div><!-- module-body -->
+        </div><!-- widget -->
+      </div><!-- product-filters -->
+    </div><!-- site-drawer-body -->
+  </div><!-- site-drawer-inner -->
+  <div class="site-drawer-overlay site-overlay"></div>
+</div><!-- site-drawer -->

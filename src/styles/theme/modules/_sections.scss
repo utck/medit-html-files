@@ -1,0 +1,106 @@
+@use '../../utils/' as *;
+@use '../root' as *;
+
+.site-section {
+  position: relative;
+  .site-section-tab {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    row-gap: rem(10);
+    margin-bottom: rem(20);
+    @include min(lg) {
+      margin-bottom: rem(36);
+    }
+    .column {
+      flex-wrap: wrap;
+      gap: rem(14);
+      flex: 0 0 auto;
+      width: 100%;
+      & > * {
+        flex: 0 0 auto;
+        width: 100%;
+        @include min(lg) {
+          width: auto;
+        }
+      }
+      @include min(lg) {
+        gap: rem(36);
+      }
+      &.tabs-column {
+        @include min(lg) {
+          flex: 1 0 0%;
+        }
+      }
+      &.actions-column {
+        @include min(lg) {
+          width: auto;
+        }
+      }
+    }
+    .section-tab-nav {
+      .tab-nav-list {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: rem(8);
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        li {
+          a {
+            display: inline-flex;
+            align-items: center;
+            gap: rem(10);
+            font-size: rem(13);
+            font-weight: 600;
+            line-height: 1;
+            text-decoration: none;
+            height: rem(40);
+            border: 1px solid color(gray-300);
+            border-radius: rem(99);
+            padding-left:rem(16);
+            padding-right: rem(4);
+            color: currentColor;
+            transition: all 0.2s ease;
+            @include min(lg) {
+              gap: rem(14);
+              height: rem(44);
+              padding-left: rem(18);
+            }
+            .tab-nav-count {
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+              font-size: rem(11);
+              width: rem(30);
+              height: rem(30);
+              border-radius: rem(99);
+              border: 1px solid color(gray-200);
+              transition: all 0.2s ease;
+              @include min(lg) {
+                font-size: rem(12);
+                width: rem(34);
+                height: rem(34);
+              }
+            }
+            &:hover {
+              border-color: color(gray-400);
+              .tab-nav-count {
+                background-color: color(gray-100);
+              }
+            }
+            &.active {
+              border-color: color(gray-500);
+              .tab-nav-count {
+                border-color: color(black);
+                background-color: color(black);
+                color: color(white);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

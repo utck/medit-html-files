@@ -1,0 +1,71 @@
+@use '../../utils/' as *;
+@use '../root' as *;
+
+input[type=color], input[type=date], input[type=datetime-local], input[type=datetime], input[type=email], input[type=month], input[type=number], input[type=password], input[type=search], input[type=tel], input[type=text], input[type=time], input[type=url], input[type=week], textarea, select, .form-control, .form-select {
+  display: inline-flex;
+  align-items: center;
+  font-family: theme(input-font);
+  font-size: theme(input-font-size);
+  font-weight: theme(input-font-weight);
+  letter-spacing: theme(input-letter-spacing);
+  line-height: 1;
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+  height: theme(input-height);
+  &::placeholder {
+    font-weight: 400;
+    color: color(gray-400);
+  }
+  &:focus-within {
+    &::placeholder {
+      color: color(gray-300);
+    }
+  }
+  &:not(.no-style) {
+    height: theme(input-height);
+    border-radius: theme(radius-base);
+    padding-left: calc(theme(input-height) / 2.5);
+    padding-right: calc(theme(input-height) / 2.5);
+    &:not(.input-filled) {
+      border: 1px solid color(gray-300);
+      &:focus, &:active, &:focus-within {
+        box-shadow: 0 0 0 rem(3) rgba(color(primary-background-rgb), 0.15);
+        border-color: color(primary-background);
+      }
+    }
+    &.input-lg {
+      @include min(lg) {
+        height: theme(input-height-large);
+        padding-left: calc(theme(input-height-large) / 2.5);
+        padding-right: calc(theme(input-height-large) / 2.5);
+        border-radius: theme(radius-lg);
+        &:not(.input-filled) {
+          &:focus, &:active, &:focus-within {
+            box-shadow: 0 0 0 rem(4) rgba(color(primary-background-rgb), 0.15);
+          }
+        }
+      }
+    }
+    &.input-filled {
+      border-color: color(gray-100);
+      background-color: color(gray-100);
+      &:focus, &:active, &:focus-within {
+        box-shadow: none;
+        background-color: color(gray-50);
+        border-color: color(gray-200);
+      }
+    }
+  }
+  &.no-style {
+    border: none;
+    background-color: transparent;
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+textarea {
+  padding-top: rem(16);
+  min-height: rem(126);
+}

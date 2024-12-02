@@ -1,0 +1,253 @@
+@use '../../utils/' as *;
+@use '../root' as *;
+
+.widget {
+  position: relative;
+  font-size: theme(sidebar-text-size);
+  margin-bottom: rem(30);
+  @include min(lg) {
+    margin-bottom: rem(40);
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
+  .widget-title {
+    font-size: theme(widget-title-size);
+    font-weight: theme(widget-title-weight);
+    letter-spacing: theme(widget-title-letter-spacing);
+    margin-bottom: rem(16);
+  }
+  nav {
+    ul {
+      li {
+        & + li {
+          margin-top: rem(8);
+        }
+      }
+    }
+  }
+  .woocommerce-widget-layered-nav-list, .widget-checkbox-list, .menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li {
+      & + li {
+        margin-top: rem(3);
+      }
+      a {
+        color: currentColor;
+        text-decoration: underline;
+        text-decoration-color: transparent;
+        text-underline-offset: rem(4);
+        &:hover {
+          text-decoration-color: currentColor;
+        }
+      }
+      .type-button {
+        --widget-font-size: #{rem(14)};
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        font-size: var(--widget-font-size);
+        font-weight: 400;
+        line-height: 1;
+        color: currentColor;
+        text-decoration: none;
+        padding-top: rem(6);
+        padding-bottom: rem(6);
+        a {
+          color: currentColor;
+          text-decoration: none;
+        }
+        .button-box {
+          position: relative;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: rem(16);
+          height: rem(16);
+          border-radius: rem(2);
+          background-color: color(white);
+          border: 1px solid color(gray-400);
+          border-radius: theme(radius-sm);
+          margin-right: rem(10);
+          transition: border-color .05s $ease;
+        }
+        &:hover {
+          .button-box {
+            border-color: color(gray-500);
+          }
+        }
+        .button-text {
+          line-height: 0;
+        }
+        .count {
+          color: color(gray-500);
+          margin-left: auto;
+          padding-left: rem(8);
+        }
+        label {
+          display: inline-flex;
+          flex-wrap: wrap;
+          align-items: center;
+          width: 100%;
+          line-height: 1;
+        }
+        input {
+          position: absolute;
+          opacity: 0;
+          left: -9999px;
+          &:checked {
+            & + label {
+              .button-box {
+                color: color(white);
+                background-color: color(black);
+                border-color: transparent;
+                &::before {
+                  position: relative;
+                  font-family: 'klbtheme';
+                  font-size: .8125rem;
+                  font-weight: 700;
+                  content: '\e85f';
+                  top: 0;
+                }
+              }
+              .button-text {
+                color: color(black);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .price_slider_wrapper {
+    .price_slider_amount {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: rem(20);
+      & > * {
+        flex: 1 0 0%;
+        &.separator {
+          flex: 0 0 auto;
+          margin: rem(20) rem(10) 0;
+        }
+        .price-placeholder {
+          display: block;
+          font-size: rem(12);
+          color: color(gray-400);
+          margin-bottom: rem(4);
+        }
+        input {
+          height: rem(38);
+          border: 1px solid color(gray-400);
+          padding-left: rem(14);
+          padding-right: rem(14);
+          &:hover {
+            border-color: color(gray-500);
+          }
+          &:focus, &:active {
+            box-shadow: none;
+            border-color: color(gray-500);
+          }
+        }
+      }
+    }
+    .ui-widget-content {
+      position: relative;
+      height: rem(3);
+      background-color: color(gray-200);
+      border-radius: rem(10);
+      margin-bottom: rem(20);
+      .ui-slider-range {
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: rem(3);
+        border: 0;
+        border-radius: rem(10);
+        background-color: color(gray-200);
+        z-index: 1;
+      }
+      .ui-slider-handle {
+        position: absolute;
+        width: rem(14);
+        height: rem(14);
+        background-color: color(gray-900);
+        border-radius: 50%;
+        top: -#{rem(6)};
+        left: 0;
+        margin: 0;
+        outline: 0;
+        cursor: pointer;
+        box-shadow: none;
+        transform: translateX(0px);
+        z-index: 1;
+        &:last-child {
+          left: 100%;
+          transform: translateX(-100%);
+        }
+      }
+    }
+    .price_slider_bottom {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row-reverse;
+      align-items: center;
+      button {
+        height: rem(38);
+        border-radius: rem(999);
+        background-color: color(gray-200);
+        &:hover {
+          background-color: color(gray-300);
+        }
+      }
+      .price_label {
+        font-size: rem(14);
+        margin-right: auto;
+      }
+    }
+  }
+  .post-widget {
+    .post {
+      display: flex;
+      gap: rem(16);
+      margin-bottom: rem(30);
+      &:last-child {
+        margin-bottom: 0;
+      }
+      .post-thumbnail {
+        width: rem(56);
+        height: rem(56);
+        margin-bottom: 0;
+        border-radius: rem(6);
+      }
+      .post-content {
+        flex: 1 0 0%;
+        .entry-title {
+          display: -webkit-box;
+          font-size: rem(14);
+          margin-bottom: rem(2);
+          overflow: hidden;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+          padding-bottom: rem(1);
+          margin-bottom: rem(4);
+          a {
+            color: currentColor;
+            text-decoration-color: transparent;
+            text-underline-offset: rem(4);
+            transition: all .1s $ease;
+            &:hover {
+              text-decoration-color: color(gray-500);
+            }
+          }
+        }
+      }
+    }
+  }
+}

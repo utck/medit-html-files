@@ -1,0 +1,140 @@
+@use '../../utils/' as *;
+@use '../root' as *;
+
+.site-calendar {
+  position: relative;
+  .schedule-table {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: theme(radius-base);
+    table {
+      font-size: rem(14);
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 800px;
+      th, td {
+        border: 1px solid color(gray-200);
+      }
+      th {
+        padding: rem(16);
+        text-align: center;
+        white-space: nowrap;
+        background-color: color(gray-50);
+        @include min(md) {
+          width: 12.5%;
+        }
+      }
+      .time-header {
+        width: rem(120);
+      }
+      .time-slot {
+        padding: rem(16);
+        text-align: center;
+        font-weight: bold;
+        white-space: nowrap;
+        width: rem(120);
+      }
+      .class-slot {
+        padding: rem(10);
+        vertical-align: top;
+        height: rem(100);
+      }
+    }
+  }
+  .class-item {
+    background: rgba(color(primary-background-rgb), 0.08);
+    padding: rem(12);
+    border-radius: rem(4);
+    height: 100%;
+    h4 {
+      font-size: rem(16);
+      font-weight: 600;
+      color: color(primary-background);
+    }
+    .instructor {
+      font-size: rem(12);
+      margin-bottom: rem(2);
+    }
+    .level {
+      font-size: rem(12);
+    }
+    @include max(md) {
+      margin: rem(5) 0;
+      padding: rem(12);
+      height: auto;
+      
+      .instructor,
+      .level {
+        font-size: rem(13);
+      }
+    }
+  }
+  @include max(md) {
+    .schedule-table {
+      overflow-x: hidden;
+      table, thead, tbody, th, td, tr {
+        display: block;
+      }
+      thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+      }
+      tr {
+        margin-bottom: rem(40);
+      }
+      td {
+        padding-top: 0 !important;
+      }
+      .time-slot {
+        width: 100%;
+        padding: rem(10) 0 0 0 !important;
+        border: none;
+        text-align: left;
+        font-size: rem(16);
+        font-weight: bold;
+      }
+      .class-slot {
+        width: 100%;
+        padding: rem(10);
+        border: none;
+        position: relative;
+        padding-left: rem(10);
+        min-height: auto;
+        &:empty {
+          display: none;
+        }
+        &:not(:empty) {
+          margin: 0 0 rem(10) 0;
+          &::before {
+            content: attr(data-day);
+            display: block;
+            color: color(gray-500);
+            margin-bottom: rem(5);
+          }
+        }
+      }
+    }
+  }
+}
+
+@include min(sm) {
+  .schedule-table {
+    .time-slot {
+      font-size: 15px;
+    }
+  }
+  
+  .class-item {
+    padding: 10px;
+    
+    h4 {
+      font-size: 13px;
+    }
+    
+    .instructor,
+    .level {
+      font-size: 12px;
+    }
+  }
+}
